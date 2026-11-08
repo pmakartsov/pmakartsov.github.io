@@ -56,7 +56,8 @@ def main():
     pages = {}
     for dp, _, fs in os.walk(OUT):
         for f in fs:
-            if f.endswith(".html"):
+            # файлы подтверждения Google / Яндекса не проверяем
+            if f.endswith(".html") and not f.startswith(("google", "yandex_")):
                 rel = os.path.relpath(os.path.join(dp, f), OUT).replace(os.sep, "/")
                 src = open(os.path.join(dp, f), encoding="utf-8").read()
                 p = Page()
