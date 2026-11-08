@@ -62,8 +62,9 @@ Settings → Pages → Custom domain. У регистратора домена �
 | Телефон, почта, Telegram, ВК | `PERSON` в начале `tools/build.py` |
 | Цены | `src/pages/services.html`, `src/data/offers.json` (для поисковиков), форма в `src/pages/contacts.html` |
 | Подписи к дипломам и сертификатам | `src/data/documents.json` |
+| Новый диплом или сертификат (PDF/скан) | `python tools/add_document.py файл.pdf cert-08`, затем запись в `src/data/documents.json` |
 | Договор-оферта, согласие на работу с несовершеннолетним | `src/files/*.docx` и `*.pdf` (после правки .docx пересохраните PDF из Word) |
-| Главное фото, favicon (Ψ), картинка для соцсетей | `1.png` → `python tools/make_hero_and_icons.py` |
+| Главное фото, favicon (Ψ), картинка для соцсетей | `python tools/make_hero_and_icons.py фото.png` (исходник `1.png` — в истории git, коммит `fad0377`) |
 | Адрес кабинета | `PERSON` в `tools/build.py` |
 | Цвета и шрифты | `src/css/10-base.css` (переменные в `:root`) |
 

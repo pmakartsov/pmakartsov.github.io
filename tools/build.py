@@ -6,6 +6,7 @@
 import hashlib
 import html
 import json
+import math
 import os
 import re
 import shutil
@@ -211,6 +212,21 @@ def abs_url(path):
     return (SITE_URL + path) if SITE_URL else path
 
 
+# Время чтения каждой страницы (out → минуты). Заполняется до сборки, чтобы карточки статей
+# ({{reading_time articles/…}}) и сами статьи ({{reading_time}}) показывали одно и то же число.
+READING_TIME = {}
+
+
+def reading_minutes(body):
+    """Минуты чтения по тексту статьи: без оглавления, крошек, блока об авторе и шорткодов."""
+    m = re.search(r"<article\b.*?</article>", body, flags=re.S)
+    t = m.group(0) if m else body
+    t = re.sub(r"\{\{.*?\}\}", " ", t)
+    t = re.sub(r"<nav\b.*?</nav>", " ", t, flags=re.S)
+    t = re.sub(r'<section class="author-box".*?</section>', " ", t, flags=re.S)
+    return max(1, math.ceil(len(text_of(t).split()) / 180))
+
+
 # ---------------------------------------------------------------------------
 # Шорткоды
 # ---------------------------------------------------------------------------
@@ -245,7 +261,10 @@ def render_shortcodes(text, ctx, depth=0):
         if name == "breadcrumbs":
             return breadcrumbs_html(ctx)
         if name == "reading_time":
-            return str(ctx.get("reading_time", 1))
+            key = rest or ctx["out"]
+            if key not in READING_TIME:
+                raise KeyError(f"{{{{reading_time {key}}}}}: нет такой страницы (в {ctx['out']})")
+            return str(READING_TIME[key])
         if name in ctx["meta"]:
             return esc(ctx["meta"][name])
         if name in PERSON:
@@ -383,7 +402,6 @@ def build_page(path, layout, versions):
     }
     if out == "404.html":
         ctx["root"] = "{{BASE}}"
-    ctx["reading_time"] = max(1, round(len(text_of(body).split()) / 180))
     content = render_shortcodes(body, ctx)
 
     og_image = meta.get("og_image") or "assets/img/og-image.jpg"
@@ -509,11 +527,11 @@ def main():
     versions = build_assets()
     layout = open(os.path.join(SRC, "layout.html"), encoding="utf-8").read()
     pages_dir = os.path.join(SRC, "pages")
-    built = []
-    for dirpath, _, files in os.walk(pages_dir):
-        for f in sorted(files):
-            if f.endswith(".html"):
-                built.append(build_page(os.path.join(dirpath, f), layout, versions))
+    paths = [os.path.join(dp, f) for dp, _, files in os.walk(pages_dir) for f in sorted(files) if f.endswith(".html")]
+    for p in paths:
+        meta, body = parse_page(p)
+        READING_TIME[meta["out"]] = reading_minutes(body)
+    built = [build_page(p, layout, versions) for p in paths]
     build_static(built)
     print(f"Готово: {len(built)} страниц → {OUT}")
     for out, meta in sorted(built):

@@ -1,6 +1,8 @@
-"""Главная фотография (из 1.png), иконки сайта в виде знака Ψ и картинка для соцсетей.
+"""Главная фотография, иконки сайта в виде знака Ψ и картинка для соцсетей.
 
-Запуск:  python tools/make_hero_and_icons.py   (нужен Pillow)
+Запуск:  python tools/make_hero_and_icons.py путь\\к\\фото.png   (нужен Pillow)
+Исходное фото (1.png) в репозитории больше не хранится: оно есть в истории git, коммит fad0377
+(git restore --source=fad0377 1.png). Кадрирование ниже рассчитано на него (1200×1198 и больше).
 """
 import json
 import os
@@ -18,7 +20,9 @@ BG = (248, 246, 241)
 images = json.load(open(MANIFEST, encoding="utf-8"))
 
 # --- главное фото: кадр 4:5, лицо в верхней трети
-src = ImageOps.exif_transpose(Image.open(os.path.join(ROOT, "1.png"))).convert("RGB")
+if len(sys.argv) != 2:
+    sys.exit(__doc__)
+src = ImageOps.exif_transpose(Image.open(sys.argv[1])).convert("RGB")
 hero = src.crop((121, 0, 1079, 1198))  # 958×1198 ≈ 4:5
 variants = []
 for w in (480, 800, 958):

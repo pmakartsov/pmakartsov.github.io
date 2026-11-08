@@ -168,19 +168,35 @@
 
 /* ----- Lightbox ----- */
 .lightbox {
-  width: 100vw; height: 100vh;
+  width: 100vw; height: 100vh; height: 100dvh;
   max-width: none; max-height: none;
   margin: 0; padding: 0;
   border: 0;
+  overflow: hidden;
   background: rgba(14, 20, 16, .94);
   color: #fff;
 }
 .lightbox::backdrop { background: rgba(14, 20, 16, .94); }
-.lightbox[open] { display: grid; grid-template-rows: auto 1fr auto; }
+/* minmax(0, …) не даёт высокому скану растянуть строку и вылезти за экран */
+.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
 .lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 1rem; }
 .lightbox__counter { font-size: .95rem; font-variant-numeric: tabular-nums; opacity: .8; }
-.lightbox__stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 0 4.5rem; touch-action: pan-y; }
-.lightbox__stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); user-select: none; }
+.lightbox__stage { position: relative; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; min-height: 0; padding: 0 4.5rem; touch-action: pan-y; }
+/* color: transparent прячет alt-текст, который браузер рисует, пока скан грузится */
+.lightbox__stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); color: transparent; user-select: none; transition: opacity .2s; }
+.lightbox__stage.is-loading img { opacity: 0; }
+.lightbox__stage.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 40px; height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid rgba(255, 255, 255, .25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lightbox-spin .8s linear infinite;
+}
+@keyframes lightbox-spin { to { transform: rotate(360deg); } }
 .lightbox__caption { margin: 0; padding: .9rem 1rem 1.25rem; font-size: .975rem; text-align: center; opacity: .9; }
 .lightbox__btn {
   display: grid;

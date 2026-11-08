@@ -194,6 +194,7 @@
     doc.body.appendChild(dialog);
 
     var img = $("img", dialog);
+    var stage = $(".lightbox__stage", dialog);
     var caption = $(".lightbox__caption", dialog);
     var counter = $(".lightbox__counter", dialog);
     var openLink = $(".lightbox__open", dialog);
@@ -205,7 +206,11 @@
       index = (i + group.length) % group.length;
       var t = group[index];
       var thumb = $("img", t);
-      img.src = t.getAttribute("href");
+      var src = t.getAttribute("href");
+      if (img.getAttribute("src") !== src) {
+        stage.classList.add("is-loading");
+        img.src = src;
+      }
       img.alt = thumb ? thumb.alt : "";
       caption.textContent = t.getAttribute("data-caption") || (thumb ? thumb.alt : "");
       counter.textContent = (index + 1) + " из " + group.length;
@@ -231,9 +236,13 @@
     function close() {
       if (typeof dialog.close === "function") dialog.close(); else dialog.removeAttribute("open");
     }
+    function loaded() { stage.classList.remove("is-loading"); }
+    img.addEventListener("load", loaded);
+    img.addEventListener("error", loaded);
     dialog.addEventListener("close", function () {
       root.style.overflow = "";
       img.removeAttribute("src");
+      stage.classList.remove("is-loading");
       if (opener) opener.focus();
     });
 
@@ -259,7 +268,6 @@
 
     // свайпы
     var x0 = null, y0 = null;
-    var stage = $(".lightbox__stage", dialog);
     stage.addEventListener("touchstart", function (e) {
       x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
     }, { passive: true });
