@@ -39,10 +39,11 @@
 .prose h3 { margin: 2em 0 .5em; font-size: 1.3rem; }
 .prose h2:first-child, .prose h3:first-child { margin-top: 0; }
 .prose p, .prose ul, .prose ol { margin-bottom: 1.15em; }
-.prose li { margin-bottom: .45em; padding-left: .25em; }
+/* отступы только у обычных списков в тексте; у списков-блоков (.values, .tips) свои */
+.prose ul:not([class]) > li, .prose ol:not([class]) > li { margin-bottom: .45em; padding-left: .25em; }
 .prose li::marker { color: var(--accent); font-weight: 700; }
-.prose ul { padding-left: 1.4em; }
-.prose ol { padding-left: 1.6em; }
+.prose ul:not([class]) { padding-left: 1.4em; }
+.prose ol:not([class]) { padding-left: 1.6em; }
 .prose a { font-weight: 600; }
 .prose figure { margin: 2.25em 0; }
 .prose figure img { width: 100%; border-radius: var(--radius-sm); }
