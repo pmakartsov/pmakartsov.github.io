@@ -1,0 +1,127 @@
+out: contacts.html
+nav: contacts
+title: Контакты и запись на консультацию — психолог Павел Макарцов
+og_title: Записаться на консультацию к психологу Павлу Макарцову
+description: Записаться к психологу Павлу Макарцову: телефон +7 912 282-42-69, Telegram @PMakartsov, ВКонтакте, e-mail. Консультации онлайн и очно в Екатеринбурге. Форма записи на сайте.
+schema: base
+crumbs: Контакты
+mobile_cta: no
+---
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        {{breadcrumbs}}
+        <p class="eyebrow">Контакты</p>
+        <h1 id="page-title">Запись на консультацию</h1>
+        <p class="lead">Начните изменения сегодня. Выберите удобный способ связи или оставьте заявку — я отвечу, и мы вместе подберём время и формат встречи.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Способы связи и форма записи">
+      <div class="container contact-layout">
+        <div>
+          <ul class="contact-list" role="list">
+            <li class="contact-card">
+              <span class="contact-card__icon">{{icon phone}}</span>
+              <div><span class="contact-card__label">Телефон</span><a href="tel:{{phone}}">{{phone_display}}</a></div>
+            </li>
+            <li class="contact-card">
+              <span class="contact-card__icon">{{icon send}}</span>
+              <div><span class="contact-card__label">Telegram</span><a href="https://t.me/{{telegram}}" target="_blank" rel="noopener">@{{telegram}}</a></div>
+            </li>
+            <li class="contact-card">
+              <span class="contact-card__icon">{{icon chat}}</span>
+              <div><span class="contact-card__label">ВКонтакте</span><a href="{{vk}}" target="_blank" rel="noopener">vk.com/mpavel1969</a></div>
+            </li>
+            <li class="contact-card">
+              <span class="contact-card__icon">{{icon mail}}</span>
+              <div><span class="contact-card__label">Электронная почта</span><a href="mailto:{{email}}">{{email}}</a></div>
+            </li>
+          </ul>
+
+          <div class="panel mt-2">
+            <h2>Как и где проходят встречи</h2>
+            <ul class="features" role="list">
+              <li class="feature"><span class="feature__icon">{{icon video}}</span><div><h3 class="h4">Онлайн</h3><p>По видеосвязи — из любого города и страны. Ссылку на встречу я пришлю после записи.</p></div></li>
+              <li class="feature"><span class="feature__icon">{{icon pin}}</span><div><h3 class="h4">Очно в Екатеринбурге</h3><p>В уютном оборудованном кабинете по адресу: <strong>{{address}}</strong>. <a href="{{map_url}}" target="_blank" rel="noopener">Открыть на карте</a></p></div></li>
+              <li class="feature"><span class="feature__icon">{{icon clock}}</span><div><h3 class="h4">Время</h3><p>Встречи проходят по предварительной записи. На сообщения я отвечаю в рабочие дни с 9:00 до 20:00.</p></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel" id="booking">
+          <h2>Оставить заявку</h2>
+          <p class="muted">Заполните форму — заявка откроется в Telegram или в почте уже готовым сообщением, останется нажать «Отправить». Данные никуда больше не передаются.</p>
+          <form class="form" id="booking-form" data-telegram="{{telegram}}" data-email="{{email}}" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="f-name">Как к вам обращаться</label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="given-name" required aria-describedby="name-error">
+                <span class="field__error" id="name-error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="f-contact">Телефон, e-mail или ник в Telegram</label>
+                <input class="input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required aria-describedby="contact-error">
+                <span class="field__error" id="contact-error" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-service">Услуга</label>
+              <select class="select" id="f-service" name="service">
+                <option value="single-90">Расширенная консультация, 90 минут — 4 000 ₽</option>
+                <option value="single-50">Индивидуальная консультация, 50 минут — 3 000 ₽</option>
+                <option value="teen-50">Консультация для подростка, 50 минут — 3 000 ₽</option>
+                <option value="diag-school">Диагностика готовности к школе, 50 минут — 3 000 ₽</option>
+                <option value="diag-pmpk">Диагностика ребёнка перед ПМПК, 50 минут — 3 000 ₽</option>
+                <option value="pack-5x60">Пакет: 5 встреч по 60 минут — 14 000 ₽</option>
+                <option value="pack-5x90">Пакет: 5 встреч по 90 минут — 18 500 ₽</option>
+                <option value="pack-10x60">Пакет: 10 встреч по 60 минут — 28 000 ₽</option>
+                <option value="unknown">Пока не знаю, нужна подсказка</option>
+              </select>
+            </div>
+            <fieldset class="field">
+              <legend>Формат</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="format" value="онлайн" checked><span>Онлайн</span></label>
+                <label class="choice"><input type="radio" name="format" value="очно (ул. Энгельса, 36)"><span>Очно</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="f-time">Удобные дни и время <span class="hint">— необязательно</span></label>
+              <input class="input" id="f-time" name="time" type="text" placeholder="Например: будни после 18:00">
+            </div>
+            <div class="field">
+              <label for="f-message">Коротко о запросе <span class="hint">— необязательно</span></label>
+              <textarea class="textarea" id="f-message" name="message" rows="4" placeholder="Пара слов о том, что беспокоит. Можно оставить пустым — обсудим при встрече."></textarea>
+            </div>
+            <div class="field">
+              <label class="checkbox"><input type="checkbox" name="consent" required aria-describedby="consent-error"><span>Я согласен(на) на обработку персональных данных в соответствии с <a href="{{root}}privacy.html" target="_blank">политикой конфиденциальности</a> и ознакомлен(а) с <a href="{{root}}legal.html#offer" target="_blank">публичной офертой</a></span></label>
+              <span class="field__error" id="consent-error" aria-live="polite"></span>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit" value="telegram">{{icon send}}Отправить в Telegram</button>
+              <button class="btn btn--ghost" type="submit" value="email">{{icon mail}}Отправить на почту</button>
+            </div>
+            <p class="form__status" role="status" aria-live="polite"></p>
+            <p class="form__note">Предпочитаете позвонить? <a href="tel:{{phone}}">{{phone_display}}</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="first-title">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Перед первой встречей</p>
+          <h2 id="first-title">Что полезно знать</h2>
+        </div>
+        <ul class="grid grid--3" role="list">
+          <li class="card topic reveal">{{icon calendar}}<h3>Запись и перенос</h3><p>Перенести встречу можно бесплатно не позднее чем за 24 часа. При отмене менее чем за 5 часов удерживается 50% стоимости.</p></li>
+          <li class="card topic reveal">{{icon card}}<h3>Оплата</h3><p>Консультация оплачивается до начала встречи через СБП по номеру {{phone_display}}. Пакеты оплачиваются целиком. По запросу выдаю электронный чек.</p></li>
+          <li class="card topic reveal">{{icon lock}}<h3>Конфиденциальность</h3><p>Всё, что вы рассказываете, остаётся между нами. Для онлайн-встречи найдите место, где вас никто не услышит.</p></li>
+        </ul>
+        <div class="callout callout--warn mt-2" role="note">
+          {{icon info}}
+          <p><strong>Если вам прямо сейчас очень тяжело</strong> и есть мысли причинить себе вред, не ждите консультации: позвоните на бесплатный круглосуточный телефон доверия <a href="tel:88002000122">8 800 2000 122</a> или в экстренные службы <a href="tel:112">112</a>.</p>
+        </div>
+      </div>
+    </section>

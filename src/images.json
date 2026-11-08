@@ -1,0 +1,360 @@
+{
+ "pavel-about": [
+  {
+   "file": "pavel-about-480.webp",
+   "w": 480,
+   "h": 480,
+   "kb": 25
+  },
+  {
+   "file": "pavel-about-800.webp",
+   "w": 800,
+   "h": 800,
+   "kb": 52
+  },
+  {
+   "file": "pavel-about-1200.webp",
+   "w": 1200,
+   "h": 1200,
+   "kb": 90
+  }
+ ],
+ "burnout-cover": [
+  {
+   "file": "burnout-cover-480.webp",
+   "w": 480,
+   "h": 480,
+   "kb": 29
+  },
+  {
+   "file": "burnout-cover-800.webp",
+   "w": 800,
+   "h": 800,
+   "kb": 66
+  },
+  {
+   "file": "burnout-cover-1024.webp",
+   "w": 1024,
+   "h": 1024,
+   "kb": 94
+  }
+ ],
+ "burnout-photo": [
+  {
+   "file": "burnout-photo-800.webp",
+   "w": 800,
+   "h": 533,
+   "kb": 35
+  },
+  {
+   "file": "burnout-photo-1200.webp",
+   "w": 1200,
+   "h": 800,
+   "kb": 70
+  }
+ ],
+ "burnout-illustration": [
+  {
+   "file": "burnout-illustration-480.webp",
+   "w": 480,
+   "h": 480,
+   "kb": 15
+  },
+  {
+   "file": "burnout-illustration-800.webp",
+   "w": 800,
+   "h": 800,
+   "kb": 29
+  },
+  {
+   "file": "burnout-illustration-1024.webp",
+   "w": 1024,
+   "h": 1024,
+   "kb": 40
+  }
+ ],
+ "selfcare-cover": [
+  {
+   "file": "selfcare-cover-480.webp",
+   "w": 480,
+   "h": 320,
+   "kb": 25
+  },
+  {
+   "file": "selfcare-cover-800.webp",
+   "w": 800,
+   "h": 533,
+   "kb": 49
+  },
+  {
+   "file": "selfcare-cover-1200.webp",
+   "w": 1200,
+   "h": 800,
+   "kb": 81
+  },
+  {
+   "file": "selfcare-cover-1600.webp",
+   "w": 1600,
+   "h": 1067,
+   "kb": 117
+  }
+ ],
+ "card-burnout": [
+  {
+   "file": "card-burnout-480.webp",
+   "w": 480,
+   "h": 479,
+   "kb": 19
+  },
+  {
+   "file": "card-burnout-716.webp",
+   "w": 716,
+   "h": 714,
+   "kb": 40
+  }
+ ],
+ "card-selfcare": [
+  {
+   "file": "card-selfcare-480.webp",
+   "w": 480,
+   "h": 480,
+   "kb": 30
+  },
+  {
+   "file": "card-selfcare-800.webp",
+   "w": 800,
+   "h": 800,
+   "kb": 58
+  }
+ ],
+ "card-consultation": [
+  {
+   "file": "card-consultation-480.webp",
+   "w": 480,
+   "h": 480,
+   "kb": 13
+  },
+  {
+   "file": "card-consultation-768.webp",
+   "w": 768,
+   "h": 768,
+   "kb": 25
+  }
+ ],
+ "diploma-01": [
+  {
+   "file": "diploma-01-640.webp",
+   "w": 640,
+   "h": 434,
+   "kb": 53
+  },
+  {
+   "file": "diploma-01-1800.webp",
+   "w": 1800,
+   "h": 1220,
+   "kb": 349
+  }
+ ],
+ "diploma-02": [
+  {
+   "file": "diploma-02-640.webp",
+   "w": 640,
+   "h": 452,
+   "kb": 22
+  },
+  {
+   "file": "diploma-02-1680.webp",
+   "w": 1680,
+   "h": 1187,
+   "kb": 99
+  }
+ ],
+ "diploma-03": [
+  {
+   "file": "diploma-03-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 26
+  },
+  {
+   "file": "diploma-03-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 217
+  }
+ ],
+ "diploma-04": [
+  {
+   "file": "diploma-04-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 29
+  },
+  {
+   "file": "diploma-04-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 166
+  }
+ ],
+ "diploma-05": [
+  {
+   "file": "diploma-05-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 28
+  },
+  {
+   "file": "diploma-05-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 260
+  }
+ ],
+ "diploma-06": [
+  {
+   "file": "diploma-06-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 29
+  },
+  {
+   "file": "diploma-06-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 310
+  }
+ ],
+ "diploma-07": [
+  {
+   "file": "diploma-07-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 33
+  },
+  {
+   "file": "diploma-07-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 239
+  }
+ ],
+ "diploma-08": [
+  {
+   "file": "diploma-08-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 30
+  },
+  {
+   "file": "diploma-08-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 218
+  }
+ ],
+ "cert-01": [
+  {
+   "file": "cert-01-640.webp",
+   "w": 640,
+   "h": 454,
+   "kb": 12
+  },
+  {
+   "file": "cert-01-1680.webp",
+   "w": 1680,
+   "h": 1191,
+   "kb": 44
+  }
+ ],
+ "cert-02": [
+  {
+   "file": "cert-02-640.webp",
+   "w": 640,
+   "h": 430,
+   "kb": 26
+  },
+  {
+   "file": "cert-02-1800.webp",
+   "w": 1800,
+   "h": 1208,
+   "kb": 180
+  }
+ ],
+ "cert-03": [
+  {
+   "file": "cert-03-640.webp",
+   "w": 640,
+   "h": 465,
+   "kb": 29
+  },
+  {
+   "file": "cert-03-1800.webp",
+   "w": 1800,
+   "h": 1308,
+   "kb": 149
+  }
+ ],
+ "cert-04": [
+  {
+   "file": "cert-04-640.webp",
+   "w": 640,
+   "h": 880,
+   "kb": 33
+  },
+  {
+   "file": "cert-04-1800.webp",
+   "w": 1800,
+   "h": 2475,
+   "kb": 160
+  }
+ ],
+ "cert-05": [
+  {
+   "file": "cert-05-640.webp",
+   "w": 640,
+   "h": 906,
+   "kb": 61
+  },
+  {
+   "file": "cert-05-1241.webp",
+   "w": 1241,
+   "h": 1756,
+   "kb": 130
+  }
+ ],
+ "cert-06": [
+  {
+   "file": "cert-06-640.webp",
+   "w": 640,
+   "h": 880,
+   "kb": 41
+  },
+  {
+   "file": "cert-06-1800.webp",
+   "w": 1800,
+   "h": 2475,
+   "kb": 226
+  }
+ ],
+ "pavel-hero": [
+  {
+   "file": "pavel-hero-480.webp",
+   "w": 480,
+   "h": 600,
+   "kb": 34
+  },
+  {
+   "file": "pavel-hero-800.webp",
+   "w": 800,
+   "h": 1000,
+   "kb": 76
+  },
+  {
+   "file": "pavel-hero-958.webp",
+   "w": 958,
+   "h": 1198,
+   "kb": 96
+  }
+ ]
+}

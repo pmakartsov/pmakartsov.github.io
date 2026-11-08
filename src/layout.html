@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="Павел Макарцов">
+  <meta name="theme-color" content="#4d6b2b">
+  <meta name="format-detection" content="telephone=no">
+  {{HEAD_EXTRA}}
+  <meta property="og:type" content="{{OG_TYPE}}">
+  <meta property="og:site_name" content="Психолог Павел Макарцов">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{root}}favicon.ico" sizes="48x48">
+  <link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{root}}apple-touch-icon.png">
+  <link rel="manifest" href="{{root}}site.webmanifest">
+  <link rel="preload" href="{{root}}assets/fonts/manrope-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{root}}assets/fonts/lora-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{root}}assets/css/style.css?v={{CSS_V}}">
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <script src="{{root}}assets/js/main.js?v={{JS_V}}" defer></script>
+  {{SCHEMA}}
+</head>
+<body class="{{BODY_CLASS}}">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  {{> header}}
+  <main id="main" tabindex="-1">
+{{CONTENT}}
+  </main>
+  {{> footer}}
+  {{MOBILE_CTA}}
+  <button class="to-top" type="button" aria-label="Наверх">{{icon arrow-up}}</button>
+</body>
+</html>

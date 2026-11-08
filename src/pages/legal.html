@@ -1,0 +1,65 @@
+out: legal.html
+nav: legal
+title: Договор-оферта и документы для клиентов — психолог Павел Макарцов
+og_title: Договор и документы для клиентов психолога Павла Макарцова
+description: Публичная оферта на оказание услуг психологического консультирования и форма информированного согласия на работу с несовершеннолетним. Скачать в PDF и Word.
+crumbs: Документы
+---
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        {{breadcrumbs}}
+        <p class="eyebrow">Документы</p>
+        <h1 id="page-title">Договор и документы для клиентов</h1>
+        <p class="lead">Здесь собраны документы, на основании которых я оказываю услуги. Ознакомьтесь с ними перед первой консультацией: так вы заранее будете знать условия оплаты, переноса и конфиденциальности.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Документы для скачивания">
+      <div class="container">
+        <ul class="files" role="list">
+          <li class="file-card reveal" id="offer">
+            <span class="file-card__icon">{{icon book}}</span>
+            <div class="file-card__body">
+              <h2 class="h3-like">Публичная оферта на оказание услуг психологического консультирования</h2>
+              <p>Договор с клиентом: какие услуги оказываются, как проходят встречи, стоимость, порядок оплаты, переноса и отмены, конфиденциальность и ответственность сторон.</p>
+              <ul class="file-card__meta" role="list"><li>PDF, 4 страницы</li><li>Для всех клиентов</li></ul>
+            </div>
+            <div class="file-card__actions">
+              <a class="btn btn--primary" href="{{root}}assets/files/dogovor-oferta.pdf" target="_blank" rel="noopener">{{icon eye}}Открыть PDF</a>
+              <a class="btn btn--ghost" href="{{root}}assets/files/dogovor-oferta.docx" download="Публичная оферта — психолог Макарцов П.С..docx">Скачать .docx</a>
+            </div>
+          </li>
+          <li class="file-card reveal" id="consent">
+            <span class="file-card__icon">{{icon users}}</span>
+            <div class="file-card__body">
+              <h2 class="h3-like">Информированное согласие на психологическое сопровождение несовершеннолетнего</h2>
+              <p>Заполняется и подписывается родителем или законным представителем до начала работы с ребёнком или подростком. Распечатайте форму и принесите на первую встречу или пришлите фото подписанного документа.</p>
+              <ul class="file-card__meta" role="list"><li>PDF, 1 страница</li><li>Для родителей</li></ul>
+            </div>
+            <div class="file-card__actions">
+              <a class="btn btn--primary" href="{{root}}assets/files/soglasie-nesovershennoletnij.pdf" target="_blank" rel="noopener">{{icon eye}}Открыть PDF</a>
+              <a class="btn btn--ghost" href="{{root}}assets/files/soglasie-nesovershennoletnij.docx" download="Согласие на работу с несовершеннолетним — психолог Макарцов П.С..docx">Скачать .docx</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="accept-title">
+      <div class="container container--narrow">
+        <h2 id="accept-title">Как заключается договор</h2>
+        <div class="prose">
+          <p>Договор заключается без подписания бумаг — по правилам публичной оферты. Согласно п. 3 ст. 438 Гражданского кодекса РФ, <strong>оплата первой консультации, диагностики или пакета консультаций означает полное и безоговорочное принятие (акцепт) условий оферты</strong>. С этого момента договор считается заключённым на условиях, опубликованных на этой странице.</p>
+          <p>Если вам удобнее подписанный экземпляр на бумаге — скажите об этом при записи, я подготовлю его к первой встрече.</p>
+        </div>
+        <ul class="grid grid--3 mt-2" role="list">
+          <li class="card topic">{{icon card}}<h3>Оплата</h3><p>100% предоплата до начала встречи через СБП по номеру {{phone_display}}. Электронный чек — по запросу.</p></li>
+          <li class="card topic">{{icon calendar}}<h3>Перенос и отмена</h3><p>Бесплатный перенос — не позднее чем за 24 часа. Отмена менее чем за 5 часов — удерживается 50%, неявка — 100%.</p></li>
+          <li class="card topic">{{icon lock}}<h3>Конфиденциальность</h3><p>Сведения о вас и сам факт обращения не разглашаются, кроме случаев, прямо предусмотренных законом.</p></li>
+        </ul>
+        <p class="note">Работа с ребёнком или подростком до 18 лет начинается только после подписания законным представителем <a href="#consent">информированного согласия</a>.</p>
+        <p class="note">Исполнитель — плательщик налога на профессиональный доход (самозанятый). Статус можно проверить в <a href="https://npd.nalog.ru/check-status/" target="_blank" rel="noopener">сервисе ФНС России</a> по ИНН 665204427274.</p>
+      </div>
+    </section>
+
+    {{> cta}}
